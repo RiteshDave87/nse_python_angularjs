@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="static/bootstrap-4.0.0/css/bootstrap.min.css">
+      <script src = "static/angular-1.7.5/angular.min.js"></script>
+	  <script src = "static/app/js/app.js"></script>
+	  <script src = "static/app/js/controller/nseController.js"></script>	  
+</head>
+   
+   <body ng-app = "nseApp">
+   {% raw %}
+		
+      <div class="container-fluid" ng-controller = "nseController as hc" >
+		<div class="row">
+			<div class="table-responsive col-md-4">	
+				<table class="table table-sm table-dark table-bordered">
+					<tr><th>symbol</th><td class="table-info text-dark">{{hc.tatamotors.symbol }}</td></tr>
+					<tr><th>companyName</th><td class="table-info text-dark">{{hc.tatamotors.companyName }}</td></tr>
+					<tr><th>lastPrice</th><td class="table-info text-dark">{{hc.tatamotors.lastPrice }}</td></tr>
+					<tr><th>dayHigh</th><td class="table-info text-dark">{{hc.tatamotors.dayHigh }}</td></tr>
+					<tr><th>dayLow</th><td class="table-info text-dark">{{hc.tatamotors.dayLow }}</td></tr>
+					<tr><th>totalBuyQuantity</th><td class="table-info text-dark">{{hc.tatamotors.totalBuyQuantity }}</td></tr>
+					<tr><th>totalSellQuantity</th><td class="table-info text-dark">{{hc.tatamotors.totalSellQuantity }}</td></tr>
+				</table>
+			</div>
+			<div class="table-responsive col-md-4">	
+				<table class="table table-sm table-dark table-bordered">
+					<tr><th>symbol</th><td class="table-info text-dark">{{hc.cmicables.symbol }}</td></tr>
+					<tr><th>companyName</th><td class="table-info text-dark">{{hc.cmicables.companyName }}</td></tr>
+					<tr><th>lastPrice</th><td class="table-info text-dark">{{hc.cmicables.lastPrice }}</td></tr>
+					<tr><th>dayHigh</th><td class="table-info text-dark">{{hc.cmicables.dayHigh }}</td></tr>
+					<tr><th>dayLow</th><td class="table-info text-dark">{{hc.cmicables.dayLow }}</td></tr>
+					<tr><th>totalBuyQuantity</th><td class="table-info text-dark">{{hc.cmicables.totalBuyQuantity }}</td></tr>
+					<tr><th>totalSellQuantity</th><td class="table-info text-dark">{{hc.cmicables.totalSellQuantity }}</td></tr>
+				</table>
+			</div>
+			<div class="table-responsive col-md-4">	
+				<table class="table table-sm table-dark table-bordered">
+					<tr><th>symbol</th><td class="table-info text-dark">{{hc.yesbank.symbol }}</td></tr>
+					<tr><th>companyName</th><td class="table-info text-dark">{{hc.yesbank.companyName }}</td></tr>
+					<tr><th>lastPrice</th><td class="table-info text-dark">{{hc.yesbank.lastPrice }}</td></tr>
+					<tr><th>dayHigh</th><td class="table-info text-dark">{{hc.yesbank.dayHigh }}</td></tr>
+					<tr><th>dayLow</th><td class="table-info text-dark">{{hc.yesbank.dayLow }}</td></tr>
+					<tr><th>totalBuyQuantity</th><td class="table-info text-dark">{{hc.yesbank.totalBuyQuantity }}</td></tr>
+					<tr><th>totalSellQuantity</th><td class="table-info text-dark">{{hc.yesbank.totalSellQuantity }}</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="row">
+		<div class="table-responsive col-md-6">	
+         <table class="table table-sm table-dark table-bordered">
+			<thead>
+			<tr>
+				<th>symbol</th>
+				<th>ltp</th>
+				<th>netPrice</th>
+				<th>highPrice</th>
+				<th>previousPrice</th>
+				<th>tradedQuantity</th>
+				<th>openPrice</th>
+				<th>lowPrice</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="table-success text-dark" ng-repeat="tg in hc.topgainers">
+				<td>{{ tg.symbol }}</td>
+				<td>{{ tg.ltp }}</td>
+				<td>{{ tg.netPrice }}</td>
+				<td>{{ tg.highPrice }}</td>
+				<td>{{ tg.previousPrice }}</td>
+				<td>{{ tg.tradedQuantity }}</td>
+				<td>{{ tg.openPrice }}</td>
+				<td>{{ tg.lowPrice }}</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+		<div class="table-responsive col-md-6">
+		<table class="table table-sm table-dark table-bordered">
+			<thead>
+			<tr>
+				<th>symbol</th>
+				<th>ltp</th>
+				<th>netPrice</th>
+				<th>highPrice</th>
+				<th>previousPrice</th>
+				<th>tradedQuantity</th>
+				<th>openPrice</th>
+				<th>lowPrice</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="table-danger text-dark" ng-repeat="tl in hc.toplosers">
+				<td>{{ tl.symbol }}</td>
+				<td>{{ tl.ltp }}</td>
+				<td>{{ tl.netPrice }}</td>
+				<td>{{ tl.highPrice }}</td>
+				<td>{{ tl.previousPrice }}</td>
+				<td>{{ tl.tradedQuantity }}</td>
+				<td>{{ tl.openPrice }}</td>
+				<td>{{ tl.lowPrice }}</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+      </div>
+	  </div>
+     {% endraw %}
+   </body>
+</html>

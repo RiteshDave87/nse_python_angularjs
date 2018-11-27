@@ -1,0 +1,1 @@
+var nseApp = angular.module("nseApp", []);
